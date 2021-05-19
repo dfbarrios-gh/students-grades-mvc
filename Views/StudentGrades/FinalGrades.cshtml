@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StudentGrades.ViewModels.StudentGradeViewModel>
+
+@{
+    ViewBag.Title = "Final Grades";
+}
+
+<h2>Final students' grade</h2>
+
+<p>
+    @Html.ActionLink("Adding grades", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalGrade)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalGrade)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Go to home", "Index", "Home")
+</div>
